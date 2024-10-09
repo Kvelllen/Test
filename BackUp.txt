@@ -1,0 +1,100 @@
+########### TABLE <orders> ###########
+
+CREATE TABLE IF NOT EXISTS orders (
+     	                        id SERIAL PRIMARY KEY,
+     	                        type VARCHAR(1) NOT NULL,
+     	                        amount INT NOT NULL,
+     	                        price INT NOT NULL,
+     	                        manager_name VARCHAR(50) NOT NULL,
+     	                        station_adress VARCHAR(100) NOT NULL,
+     	                        manager_telephone VARCHAR(20) NOT NULL,
+     	                        customer_name VARCHAR(50) NOT NULL,
+     	                        customer_adress VARCHAR(100) NOT NULL,
+     	                        customer_telephone VARCHAR(20) NOT NULL,
+     	                        creation_time TIMESTAMP NOT NULL,
+     	                        completion_time TIMESTAMP);
+
+INSERT INTO orders(type, amount, price, 
+	manager_name, station_adress, manager_telephone, 
+	customer_name, customer_adress, customer_telephone, 
+	creation_time)
+VALUES
+	('C', '150', '7500', 'Anton Zvereba', 'No.1', '+380671111010', 'Omnuim Corp.', 'Odesa, Itska-Harabina st., 21', '+380978593432', CURRENT_TIMESTAMP);
+
+INSERT INTO orders(type, amount, price, 
+	manager_name, station_adress, manager_telephone, 
+	customer_name, customer_adress, customer_telephone, 
+	creation_time)
+VALUES
+	('A', '100', '10000', 'Dmitro Olegovich', 'No.2', '+380672222020', 'GlassWorld Corp.', 'Odesa, Vilna st., 2', '+380675943466', CURRENT_TIMESTAMP);
+
+INSERT INTO orders(type, amount, price, 
+	manager_name, station_adress, manager_telephone, 
+	customer_name, customer_adress, customer_telephone, 
+	creation_time)
+VALUES
+	('B', '100', '7000', 'Anton Zvereba', 'No.1', '+380671111010', 'Fernand Corp.', 'Odesa, Shevchenko st., 54', '+380501234567', CURRENT_TIMESTAMP);
+
+INSERT INTO orders(type, amount, price, 
+	manager_name, station_adress, manager_telephone, 
+	customer_name, customer_adress, customer_telephone, 
+	creation_time)
+VALUES
+	('A', 200, 20000, 'Anton Zvereba', 'No.1', '+380671111010', 'Fernand Corp.', 'Odesa, Itska-Harabina st., 21', '+380978594523', CURRENT_TIMESTAMP);
+
+	INSERT INTO orders(type, amount, price,
+	manager_name, station_adress, manager_telephone,
+	customer_name, customer_adress, customer_telephone,
+	creation_time)
+VALUES
+	('A', '450', '45000', 'Sam Altman', 'No.3', '+380671178116', 'TetraPack Corp.', 'Odesa, Itska-Harabina st., 21', '+380978593432', CURRENT_TIMESTAMP);
+
+INSERT INTO orders(type, amount, price,
+	manager_name, station_adress, manager_telephone,
+	customer_name, customer_adress, customer_telephone,
+	creation_time)
+VALUES
+	('C', '1000', '50000', 'Sam Altman', 'No.3', '+380671178116', 'TetraPack Corp.', 'Odesa, Itska-Harabina st., 21', '+380978593432', CURRENT_TIMESTAMP);
+
+INSERT INTO orders(type, amount, price,
+	manager_name, station_adress, manager_telephone,
+	customer_name, customer_adress, customer_telephone,
+	creation_time)
+VALUES
+	('C', '1000', '50000', 'Sam Altman', 'No.3', '+380671178116', 'TetraPack Corp.', 'Odesa, Itska-Harabina st., 21', '+380978593432', CURRENT_TIMESTAMP);
+
+#################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########### TABLE <managers> ###########
+
+CREATE TABLE IF NOT EXISTS managers (
+     	                        id SERIAL PRIMARY KEY,
+     	                        manager_name VARCHAR(50) UNIQUE NOT NULL,
+     	                        station_adress VARCHAR(100) NOT NULL,
+     	                        manager_telephone VARCHAR(20) UNIQUE NOT NULL,
+     	                        login_password VARCHAR(32) NOT NULL);
+INSERT INTO managers(manager_name, station_adress, manager_telephone, login_password)
+	VALUES
+	('Anton Zvereba', 'No.1', '+380671111010', 'anton123'),
+	('Dmitro Olegovich', 'No.2', '+380672222020', 'dmitro123'),
+	('Sam Altman', 'No.3', '+380671178116', 'sam123');
+SELECT * FROM managers;
+
+#################################
